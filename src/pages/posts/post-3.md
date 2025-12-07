@@ -2,11 +2,7 @@
 title: Learning Astro while learning Omarchy and Getting Better at Neovim
 author: Asa DeHaan
 description: "All the things, All at once"
-image:
-image:
-    url: "https://docs.astro.build/assets/rays.webp"
-    alt: "The Astro logo on a dark background with rainbow rays."
-pubDate: 2022-07-15
+pubDate: 2022-12-07
 tags: ["astro", "learning in public", "setbacks", "community"]
 ---
 
