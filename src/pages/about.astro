@@ -1,3 +1,21 @@
+---
+const pageTitle = "About Me";
+
+const identity = {
+firstName:"Asa",
+country:"US",
+occupation:"Research Technician",
+hobbies:["3D design", "3D Printing", "Gaming", "Running", "Learning", "Homelab"]
+};
+
+const skills = ["R", "Python", "CAD", "Data Engineering", "Data Analysis"];
+const learning = ["Go", "Javascript", "Typescript", "C", "SQL","HTML"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+---
+
 <html lang="en">
 <a href="/">Home</a>
 <a href="/about/">About</a>
@@ -7,13 +25,32 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} >
-    <title>Astro</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
-    <h1>About Me</h1>
+    <h1>{pageTitle}</h1>
     <p>My name is Asa DeHaan, I am a junior developer. I work mainly with environmental data from climate monitoring stations across Colorado. I am working on developing an environmental data pipeline that automates retrieval,
     QA/QC, storage, and dissemenation.
     I am working through backend development courses and the Astro introductory tutorial to make a portfolio webpage so I can share my achievements.</p>
     <p>I have little experience with front end development, but Astro seems to be the way to go these days. This site will update as I complete the tutorial and continue beyond it to build out my site</p>
+    <p> Here are a few facts about me:</p>
+    <ul>
+      <li>My name is {identity.firstName}.</li>
+      <li> I live in the {identity.country} and I work as a {identity.occupation}.</li>
+      {identity.hobbies.length >= 2 &&
+      <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+      }
+    </ul>
+    <p>My skills are:</p>
+    <ul>
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+    <p>Skills I am learning:</p>
+    <ul>
+      {learning.map((learning) => <li>{learning}</li>)}
+    </ul>
+    {happy && <p>I am enjoying learning Astro</p>}
+    {finished && <p>I finished this tutorial</p>}
+    {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
   </body>
 </html>
